@@ -8,14 +8,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// Route สำหรับการดึงข้อมูลผู้ใช้
-app.get('/users', (req, res) => {
-  const users = [
-    { id: 1, name: 'MSU' },
-    { id: 2, name: 'IT-MSU' }
-  ];
-  res.json(users);
-});
+
 
 // เริ่มต้นเซิร์ฟเวอร์
 app.listen(port,  () => { // '0.0.0.0' หมายถึงฟังทุก interface รวมถึง external IP
