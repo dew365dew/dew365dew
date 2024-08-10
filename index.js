@@ -1,16 +1,20 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-// const port = 223.206.251.195;
 
 // Route หลักที่ root
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+// เส้นทางอื่น ๆ ที่คุณต้องการ
+app.get('/users', (req, res) => {
+  const users = [
+    { id: 1, name: 'John Doe' },
+    { id: 2, name: 'Jane Doe' }
+  ];
+  res.json(users);
+});
 
+// Export the app for Vercel to handle
+module.exports = app;
 
-// เริ่มต้นเซิร์ฟเวอร์
-app.listen(port,  () => { // '0.0.0.0' หมายถึงฟังทุก interface รวมถึง external IP
-    console.log(`Server is running on http://localhost:${port}`);
-  });
